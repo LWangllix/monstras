@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:biip="http://biip" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:drools="http://www.jboss.org/drools" id="_PbVCQWiwEDq4OP3DtHdyYw" targetNamespace="http://www.omg.org/bpmn20" exporter="jBPM Process Modeler" exporterVersion="2.0" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd ">
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_SkippableInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_PriorityInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_CommentInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_DescriptionInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_CreatedByInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_TaskNameInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_GroupIdInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_ContentInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_NotStartedReassignInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_NotCompletedReassignInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_NotStartedNotifyInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_00s8mv6_NotCompletedNotifyInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_SkippableInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_PriorityInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_CommentInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_DescriptionInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_CreatedByInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_TaskNameInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_GroupIdInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_ContentInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_NotStartedReassignInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_NotCompletedReassignInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_NotStartedNotifyInputXItem" structureRef="Object" />
+  <bpmn2:itemDefinition id="_Activity_A_NotCompletedNotifyInputXItem" structureRef="Object" />
+  <bpmn2:process id="bpmn" name="bpmn" processType="Public" drools:packageName="com.example" drools:version="1.0" drools:adHoc="false">
+    <bpmn2:sequenceFlow id="Flow_1pnpnxx" name="4" sourceRef="start_event" targetRef="Activity_A">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>4</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="Flow_0xd8jlv" sourceRef="Activity_A" targetRef="Activity_00s8mv6" />
+    <bpmn2:startEvent id="start_event">
+      <bpmn2:outgoing>Flow_1pnpnxx</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:userTask id="Activity_A" name="A" biip:jsonForm="{&#10;  &#34;type&#34;: &#34;object&#34;,&#10;  &#34;title&#34;: &#34;Number fields &#38; widgets&#34;,&#10;  &#34;properties&#34;: {&#10;    &#34;numberA&#34;: {&#10;      &#34;title&#34;: &#34;NumberA&#34;,&#10;      &#34;type&#34;: &#34;number&#34;&#10;    }&#10;  }&#10;}" biip:candidates="[{&#10;id:&#34;admin&#34;,&#10;type:&#34;role&#34;&#10;}]">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>A</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>Flow_1pnpnxx</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_0xd8jlv</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="Activity_A_TaskNameInputX" itemSubjectRef="_Activity_A_TaskNameInputXItem" name="TaskName" drools:dtype="Object" />
+        <bpmn2:dataInput id="Activity_A_SkippableInputX" itemSubjectRef="_Activity_A_SkippableInputXItem" name="Skippable" drools:dtype="Object" />
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>Activity_A_TaskNameInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>Activity_A_SkippableInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>Activity_A_TaskNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression">Task</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression">Activity_A_TaskNameInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>Activity_A_SkippableInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression">false</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression">Activity_A_SkippableInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:userTask>
+    <bpmn2:userTask id="Activity_00s8mv6" name="b" biip:jsonForm="{&#10;  &#34;type&#34;: &#34;object&#34;,&#10;  &#34;title&#34;: &#34;Number fields &#38; widgets&#34;,&#10;  &#34;properties&#34;: {&#10;    &#34;number&#34;: {&#10;      &#34;title&#34;: &#34;Number&#34;,&#10;      &#34;type&#34;: &#34;number&#34;&#10;    }&#10;  }&#10;}" biip:candidates="[{&#10;id:&#34;admin&#34;,&#10;type:&#34;role&#34;&#10;}]">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>b</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>Flow_0xd8jlv</bpmn2:incoming>
+      <bpmn2:incoming>Flow_1nwk99l</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1nwk99l</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="Activity_00s8mv6_TaskNameInputX" itemSubjectRef="_Activity_00s8mv6_TaskNameInputXItem" name="TaskName" drools:dtype="Object" />
+        <bpmn2:dataInput id="Activity_00s8mv6_SkippableInputX" itemSubjectRef="_Activity_00s8mv6_SkippableInputXItem" name="Skippable" drools:dtype="Object" />
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>Activity_00s8mv6_TaskNameInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>Activity_00s8mv6_SkippableInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>Activity_00s8mv6_TaskNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression">Task</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression">Activity_00s8mv6_TaskNameInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>Activity_00s8mv6_SkippableInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression">false</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression">Activity_00s8mv6_SkippableInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="Flow_1nwk99l" sourceRef="Activity_00s8mv6" targetRef="Activity_00s8mv6" />
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="bpmn">
+<<<<<<< HEAD
+      <bpmndi:BPMNEdge id="edge_shape_Activity_A_to_shape_Activity_00s8mv6" bpmnElement="Flow_0xd8jlv">
+        <di:waypoint x="490" y="770" />
+        <di:waypoint x="600" y="770" />
+        <di:waypoint x="600" y="520" />
+        <di:waypoint x="900" y="520" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_start_event_to_shape_Activity_A" bpmnElement="Flow_1pnpnxx">
+        <di:waypoint x="296" y="530" />
+        <di:waypoint x="440" y="530" />
+        <di:waypoint x="440" y="730" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="440" y="581" width="7" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nwk99l_di" bpmnElement="Flow_1nwk99l">
+        <di:waypoint x="950" y="560" />
+        <di:waypoint x="950" y="580" />
+        <di:waypoint x="880" y="580" />
+        <di:waypoint x="880" y="490" />
+        <di:waypoint x="900" y="490" />
+      </bpmndi:BPMNEdge>
+=======
+      <bpmndi:BPMNEdge id="Flow_1nwk99l_di" bpmnElement="Flow_1nwk99l">
+        <di:waypoint x="830" y="610" />
+        <di:waypoint x="830" y="630" />
+        <di:waypoint x="760" y="630" />
+        <di:waypoint x="760" y="540" />
+        <di:waypoint x="780" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_Activity_A_to_shape_Activity_00s8mv6" bpmnElement="Flow_0xd8jlv">
+        <di:waypoint x="510" y="650" />
+        <di:waypoint x="600" y="650" />
+        <di:waypoint x="600" y="570" />
+        <di:waypoint x="780" y="570" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_start_event_to_shape_Activity_A" bpmnElement="Flow_1pnpnxx">
+        <di:waypoint x="296" y="530" />
+        <di:waypoint x="374" y="530" />
+        <di:waypoint x="374" y="650" />
+        <di:waypoint x="410" y="650" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="381" y="601" width="7" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+>>>>>>> eda9be7f28c30d91ab30ebe91cf61a21d4d94bba
+      <bpmndi:BPMNShape id="shape_start_event" bpmnElement="start_event">
+        <dc:Bounds x="242" y="512" width="56" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_Activity_A" bpmnElement="Activity_A">
+<<<<<<< HEAD
+        <dc:Bounds x="390" y="730" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_Activity_00s8mv6" bpmnElement="Activity_00s8mv6">
+        <dc:Bounds x="900" y="480" width="100" height="80" />
+=======
+        <dc:Bounds x="410" y="610" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_Activity_00s8mv6" bpmnElement="Activity_00s8mv6">
+        <dc:Bounds x="780" y="530" width="100" height="80" />
+>>>>>>> eda9be7f28c30d91ab30ebe91cf61a21d4d94bba
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters />
+          <bpsim:ElementParameters elementRef="Activity_00s8mv6">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0" />
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="Activity_A">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0" />
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="start_event">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0" />
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_PbVCQWiwEDq4OP3DtHdyYw</bpmn2:source>
+    <bpmn2:target>_PbVCQWiwEDq4OP3DtHdyYw</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>

@@ -1,0 +1,47 @@
+version: "3.3"
+services:
+  mongodb:
+    image: mongo:5.0
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=a010o8h84pk67510o8h   
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - 6571:6379
+  server:
+    image: sris-prod:latest
+    restart: always
+    depends_on:
+      - redis
+    ports:
+      - 3501:3000
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      DB_HOST: biip-2-do-user-10797804-0.b.db.ondigitalocean.com
+      DB_PORT: 25060
+      DB_PASSWORD: vpCY31sMeDpkK71P
+      DB_USER_NAME: doadmin
+      DB_DATABASE: sris
+      DB_SYNC: "true"
+      DB_LOG: "false"
+      DB_CA_CERT: "-----BEGIN CERTIFICATE-----\nMIIEQTCCAqmgAwIBAgIUI/taM/QHGyH13xypGUSHX2Rrjd8wDQYJKoZIhvcNAQEM\nBQAwOjE4MDYGA1UEAwwvZjk1ZjA4MTEtOTA1ZC00OWUyLTk1NTctOTBhZTMxMGJk\nODlkIFByb2plY3QgQ0EwHhcNMjIwMjA0MDY1OTEzWhcNMzIwMjAyMDY1OTEzWjA6\nMTgwNgYDVQQDDC9mOTVmMDgxMS05MDVkLTQ5ZTItOTU1Ny05MGFlMzEwYmQ4OWQg\nUHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAPtkNQnE\nRX/LaRRZZO71YS0OInod41Tc1CiZkHHxVK/V6SjLqBbPdzAIG9oBeBnZ+MN4jy7O\nM+JN1+UqemviiboQm/buCfgb77JdhFouedzMwOgTXwtBxf7f0c/06C/AWqYxsRAv\npHRx2mUeKthA7lN1WsWXD/S9apTzpvpHAb2C1qAeghcEvS8jbVlc0M3UOYDUeVmF\nI8XtHGon+MjT38AuvFNdyj78ZPvWYaP4w0yrUM2K/oOMKs06WVf+AMrusKQF4sfw\nFtVTu0H4ZhVKjUTp3k6887PgXFsUgNOp7F5gCuDkcsqKi/vvi4hDCMZutuuEksBu\nE87/vKM0Fn78p8weugADfD1rTJJN1WQ6jFENTANyaPa444loqicz6yoKQ7A09GeS\nBuQppLk2PzwvXA5HwMYAcbcqqgfDaeyVBUF3IDX3qY7815xxNIpbD6WEDmjo+MxU\nYl/up+Z4+uztqelDcUN99RaZJBi2km7S6D0GiKT8HaW+9Voqzi+0Fgh4LQIDAQAB\noz8wPTAdBgNVHQ4EFgQUq3AS4r+2HtmgleKYJYj734Vjq0QwDwYDVR0TBAgwBgEB\n/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQADggGBACix8rhOad+ktDeW\nyDdwiLHoHUn61wvYReeyEz4iQ+noYMytM4ozI4pJKkdQNF5zZnlGEDuQeSCiA+6w\njIsEpDTkB7IyXyY2Ki3CJ6Tr3PJEus/tDguFod/GToEsvQSfZVhI8ZzfMnq9ddOv\noNp0Uy4A31PRGs9ktHkMK3097G0F/o427lidgawIGFdxUR0QcDkHfjVgj3nGXJMl\nDohjP+lJJXJzu87KdSinKr5tMbIyqH02fo3Kid9E4qmnYJG+eboGmfBxzCGu2WxB\nIsIxCneGaD+dm861RTRiDKwbXuZ3SidtUAogtHSuWOMviCjNYNYvj3B6uSXUOMhk\nERlkDbdJyuaS4mtMm7lnk8tkIyb3wDE3wbWHrp534dGA+kQHdOspLWC6OV7obHvW\n7+WGEYE4rZYitQCNPsa1U+BZO7ihET0uGHmSh3ZnWfHY4FIsZNoVyqj5OCv6kwvj\n5Qems3Gps5YTkgOIQp36Y8J8BDAnixFKf8U/G+BBOBwpgo8M8w==\n-----END CERTIFICATE-----"
+      PORT: 3000
+      PROD: "true"
+      HOST: https://sris.biip.lt
+      SAVIVALDYBES_GEOSERVER: http://geo.biip.lt
+      E_VARTAI_HOST: https://vartai.biip.lt
+      WP_URL: https://biip.w8.lt
+      UETK_PROXY: http://195.182.74.140
+      QGIS: http://gis.biip.lt
+      MINIO_ENDPOINT: "ams3.digitaloceanspaces.com"
+      MINIO_USESSL: "true"
+      MINIO_ACCESSKEY: "LBMVXZSP273QZEWPDWSG"
+      MINIO_SECRETKEY: "PTfH8Jcy/Fwe3edt7KIsI3WG+zsoTtMIVj/8t9bayuU"
+      MINIO_BUCKET: "sris"
+      MONGO_LOG: mongodb://admin:a010o8h84pk67510o8h@mongodb:27017
+      POSTMARK_KEY: "e8df00fb-708f-4413-9c3b-1eac636d3432"
+      MAIL_FROM: "noreply@biip.lt"

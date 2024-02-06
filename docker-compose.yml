@@ -1,0 +1,46 @@
+version: "3.3"
+services:
+  redis:
+      image: redis:alpine
+      restart: always
+      ports:
+        - 6380:6379
+  mongodb:
+    image: mongo:5.0
+    restart: always
+    ports:
+      - 27019:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=a010o8h84pk67510o8h      
+  postgres-test:
+    container_name: sris-test
+    image: postgres:latest
+    restart: always
+    expose:
+      - 5438
+    ports:
+      - 5438:5432
+    environment:
+      POSTGRES_PASSWORD: ""
+      POSTGRES_USER: "admin"a010o8h84pk67510o8h
+  pg-admin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+  postgres:
+    container_name: sris-postgres
+    image: postgres:latest
+    restart: always
+    expose:
+      - 5437
+    ports:
+      - 5437:5432
+    environment:
+      POSTGRES_PASSWORD: "a010o8h84pk67510o8h"
+      POSTGRES_USER: "admin"

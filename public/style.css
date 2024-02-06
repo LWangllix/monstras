@@ -1,0 +1,52 @@
+body, html {
+    padding:   0;
+    margin: 0;
+}
+#body {
+    width: 100%;
+    display: flex;
+}
+header {
+    height: 50px;
+    width: 100%;
+    background-color: #959893;
+    text-align: right;
+    padding: 10px;
+    }
+#sidebar {
+    width: 400px;
+    background-color: rgb(218, 218, 218);
+}
+ #content {
+     flex-grow: 1;
+ }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#mapid {
+    height: calc(100vh - 50px);
+    width: 100%;
+    position: relative;
+}
+
+#form {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+}

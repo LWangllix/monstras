@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-app
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: {{ .Release.Name }}-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-app
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app
+    spec:
+      containers:
+      - name: savivaldybes
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        image: biip/savivaldybes-geoserver:0.01
+        ports:
+        - containerPort: 8080
+      - name: app
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        env:
+        - name: DB_HOST
+          value: {{ .Release.Name }}-postgres
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_PASSWORD
+          value: "root"
+        - name: PROD
+          value: "true"
+        - name: DB_SYNC
+          value: "true"
+        - name: PORT
+          value: "80"
+        - name: DB_LOG
+          value: "false"
+        - name: HOST
+          value: "https://{{ .Release.Name }}.{{ .Values.host }}"
+        - name: SAVIVALDYBES_GEOSERVER
+          value: "http://localhost:8787"
+        - name: E_VARTAI_HOST
+          value: "http://localhost:8383"
+        - name: DB_USER_NAME
+          value: "postgres"
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred  

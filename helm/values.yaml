@@ -1,0 +1,6 @@
+replicaCount: 1
+host: gamta.online
+image:
+  repository: biip/zvejyba
+  pullPolicy: Always
+  tag: "0.03"

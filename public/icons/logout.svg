@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="Group_358" data-name="Group 358" transform="translate(-1754 -541)">
+    <g id="Ellipse_212" data-name="Ellipse 212" transform="translate(1754 541)" fill="rgba(18,26,85,0.24)" stroke="rgba(18,26,85,0.4)" stroke-width="1">
+      <circle cx="32" cy="32" r="32" stroke="none"/>
+      <circle cx="32" cy="32" r="31.5" fill="none"/>
+    </g>
+    <g id="Ellipse_211" data-name="Ellipse 211" transform="translate(1782 569)" fill="#121a55" stroke="#fff" stroke-width="2">
+      <circle cx="4" cy="4" r="4" stroke="none"/>
+      <circle cx="4" cy="4" r="5" fill="none"/>
+    </g>
+  </g>
+</svg>
